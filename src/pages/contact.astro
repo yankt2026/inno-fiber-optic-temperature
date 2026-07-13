@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/BaseLayout.astro';
+import {site} from '../config/site';
+---
+<Base title="Contact INNO | Fiber Optic Temperature Project" description="Contact INNO directly about fiber optic temperature measurement points, equipment, range and integration requirements.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Technical contact</p>
+      <h1>Discuss Your Fiber Optic Temperature Measurement Project</h1>
+      <p>Send your application details directly to INNO for product and configuration guidance. Model-specific values will be confirmed in the applicable datasheet.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container product-hero">
+      <div>
+        <p class="eyebrow">Direct email</p>
+        <h2>{site.email}</h2>
+        <p class="lead">Email is the primary contact method for technical inquiries, drawings, product datasheets and project configuration discussions.</p>
+        <a class="button" href={`mailto:${site.email}?subject=Fiber%20optic%20temperature%20project%20inquiry`}>Email INNO</a>
+      </div>
+      <aside class="card metric">
+        <h2>Information to include</h2>
+        <ul>
+          <li>Your name, company and country</li>
+          <li>Equipment and application</li>
+          <li>Number of measurement points</li>
+          <li>Required temperature range</li>
+          <li>Probe routing or installation constraints</li>
+          <li>Display, alarm and communication requirements</li>
+          <li>Relevant drawings or specifications</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,4 @@
+---
+import Base from '../layouts/BaseLayout.astro';import {products} from '../data/products';import {solutions,resources} from '../data/pages';
+---
+<Base title="HTML Sitemap | INNO" description="Browse all INNO fiber optic temperature product, solution, technology and resource pages."><section class="page-hero"><div class="container"><h1>Website Sitemap</h1><p>Browse the complete point-based fiber optic temperature measurement website.</p></div></section><section class="section"><div class="container grid"><div class="card"><h2>Products</h2>{products.map(x=><a href={`/products/${x.slug}/`}>{x.name}</a>)}</div><div class="card"><h2>Solutions</h2>{solutions.map(x=><a href={`/solutions/${x.slug}/`}>{x.title}</a>)}</div><div class="card"><h2>Resources</h2>{resources.map(x=><a href={`/resources/${x.slug}/`}>{x.title}</a>)}</div></div></section></Base>

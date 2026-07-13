@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/CTA.astro';
+import SystemDiagram from '../../components/SystemDiagram.astro';
+import { technologyPages } from '../../data/pages';
+
+export function getStaticPaths() {
+  return technologyPages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Technology', url: '/technology/' },
+  { name: page.title, url: `/technology/${page.slug}/` }
+];
+---
+
+<Base title={`${page.title} Technology | INNO`} description={page.description} breadcrumbs={breadcrumbs}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Measurement principle</p>
+      <h1>{page.title}</h1>
+      <p>Fluorescent fiber optic sensing uses an optical excitation-and-return path to measure temperature at a discrete probe tip without electrical sensing conductors at that point.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container prose">
+      <h2>From excitation light to temperature value</h2>
+      <p>The instrument sends a light pulse through the optical fiber. Fluorescent material at the probe tip emits a return signal whose decay lifetime changes with temperature. The instrument calculates temperature from that lifetime using its calibration.</p>
+      <h2>Why lifetime is the measured variable</h2>
+      <p>Lifetime-based processing evaluates the time behavior of the emission rather than using optical intensity as the temperature value. This supports a measurement architecture that is less dependent on absolute light level, although connector quality, bend protection and instrument diagnostics still matter.</p>
+    </div>
+    <div class="container"><SystemDiagram /></div>
+    <div class="container prose">
+      <h2>What determines real application performance</h2>
+      <p>Product accuracy is only one part of the measurement chain. Probe thermal contact, physical placement, response of the installed assembly, channel configuration and calibration all influence whether a value answers the intended engineering question.</p>
+      <h2>Selection boundary</h2>
+      <p>Confirm temperature range, accuracy, response time, probe geometry, fiber length, channel count and communications on the datasheet for the selected model. Do not transfer a value from one configuration to another.</p>
+      <p>Review the <a href="/products/fiber-optic-temperature-sensor/">fluorescent fiber optic sensor</a> or continue to the <a href="/resources/fiber-optic-temperature-sensor-selection-guide/">selection guide</a>.</p>
+    </div>
+  </section>
+  <CTA />
+</Base>

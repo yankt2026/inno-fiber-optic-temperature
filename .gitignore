@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+astro-preview.log
+astro-preview-error.log
+.env
+.env.*
+!.env.example

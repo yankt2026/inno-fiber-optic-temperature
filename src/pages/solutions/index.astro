@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/BaseLayout.astro';import CTA from '../../components/CTA.astro';import {solutions} from '../../data/pages';
+---
+<Base title="Fiber Optic Temperature Monitoring Solutions | INNO" description="Application-specific fluorescent fiber optic temperature monitoring for transformers, reactors, switchgear and high-voltage EMI environments."><section class="page-hero"><div class="container"><p class="eyebrow">Solutions</p><h1>Temperature Monitoring for Power Equipment</h1><p>Start with the thermal risk and measurement point, then engineer the optical probe, route, instrument and interface as one system.</p></div></section><section class="section"><div class="container grid">{solutions.map(p=><article class="card linked-card color-shift-card"><h2><a href={`/solutions/${p.slug}/`}>{p.title}</a></h2><p>{p.description}</p></article>)}</div></section><CTA/></Base>

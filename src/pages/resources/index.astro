@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/BaseLayout.astro';import CTA from '../../components/CTA.astro';import {resources} from '../../data/pages';
+---
+<Base title="Fiber Optic Temperature Sensor Resources | INNO" description="Engineering guides covering fluorescent fiber optic temperature principles, selection, installation, comparisons and transformer monitoring."><section class="page-hero"><div class="container"><p class="eyebrow">Technical library</p><h1>Fiber Optic Temperature Measurement Resources</h1><p>Practical guidance for specifying probes, monitoring instruments and installation architecture without relying on unsupported values.</p></div></section><section class="section"><div class="container grid">{resources.map(p=><article class="card linked-card"><h2><a href={`/resources/${p.slug}/`}>{p.title}</a></h2><p>{p.description}</p></article>)}</div></section><CTA/></Base>

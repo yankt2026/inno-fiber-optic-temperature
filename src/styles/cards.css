@@ -1,0 +1,49 @@
+.linked-card {
+  position: relative;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background-color .22s ease;
+}
+
+.linked-card:hover,
+.linked-card:focus-within {
+  transform: translateY(-6px);
+  border-color: var(--blue);
+  box-shadow: 0 18px 38px rgba(11, 42, 74, .13);
+}
+
+.linked-card h2 a::after,
+.linked-card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.linked-card h2 a:focus-visible,
+.linked-card h3 a:focus-visible,
+.product-image-link:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.linked-card.color-shift-card:hover,
+.linked-card.color-shift-card:focus-within,
+.product-card:hover,
+.product-card:focus-within {
+  background: var(--pale);
+}
+
+.product-image-link {
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.product-image-link img { transition: transform .22s ease; }
+.product-card:hover .product-image-link img,
+.product-card:focus-within .product-image-link img { transform: scale(1.025); }
+
+@media (prefers-reduced-motion: reduce) {
+  .linked-card, .product-image-link img { transition: none; }
+  .linked-card:hover, .linked-card:focus-within { transform: none; }
+  .product-card:hover .product-image-link img,
+  .product-card:focus-within .product-image-link img { transform: none; }
+}

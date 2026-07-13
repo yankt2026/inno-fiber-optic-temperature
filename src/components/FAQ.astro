@@ -1,0 +1,4 @@
+---
+const {items=[]}=Astro.props;
+---
+<section class="section"><div class="section-head"><p class="eyebrow">Technical questions</p><h2>Frequently Asked Questions</h2></div><div class="faq">{items.map((x:{q:string;a:string})=><details><summary>{x.q}</summary><p>{x.a}</p></details>)}</div></section>

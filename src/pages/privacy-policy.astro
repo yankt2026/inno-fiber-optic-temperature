@@ -1,0 +1,4 @@
+---
+import Base from '../layouts/BaseLayout.astro';import {site} from '../config/site';
+---
+<Base title="Privacy Policy | INNO" description="Privacy information for technical inquiries submitted to the INNO fiber optic temperature website."><section class="page-hero"><div class="container"><h1>Privacy Policy</h1><p>How inquiry information is used on this static website.</p></div></section><section class="section"><div class="container prose"><h2>Information you provide</h2><p>When you contact INNO, you may provide business contact details and technical project information. This information is used to understand and respond to your inquiry.</p><h2>Static form behavior</h2><p>Unless a form service is configured, the inquiry form prepares an email in your own email application and does not transmit data through this website.</p><h2>Contact</h2><p>Questions about this policy can be sent to <a href={`mailto:${site.email}`}>{site.email}</a>.</p></div></section></Base>
