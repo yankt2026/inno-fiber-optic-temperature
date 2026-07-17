@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404/
 
-Sitemap: https://baike84.com/sitemap-index.xml
+Sitemap: https://baike84.com/sitemap.xml

@@ -41,3 +41,12 @@ test('contact page uses direct email without an inquiry form', () => {
   assert.ok(!contact.includes('fetch('));
   assert.ok(contact.includes('mailto:${site.email}'));
 });
+
+test('builds /sitemap.xml and advertises it in robots.txt', () => {
+  const packageJson=JSON.parse(readFileSync(join(root,'package.json'),'utf8'));
+  const robots=readFileSync(join(root,'public/robots.txt'),'utf8');
+  assert.match(packageJson.scripts.build,/scripts\/create-sitemap-alias\.mjs/);
+  assert.ok(existsSync(join(root,'scripts/create-sitemap-alias.mjs')));
+  assert.match(readFileSync(join(root,'scripts/create-sitemap-alias.mjs'),'utf8'),/^import /);
+  assert.match(robots,/Sitemap: https:\/\/baike84\.com\/sitemap\.xml/);
+});
