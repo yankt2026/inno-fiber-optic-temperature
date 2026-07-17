@@ -2,6 +2,7 @@ node_modules/
 dist/
 .astro/
 .wrangler/
+.seo-cache/
 astro-preview.log
 astro-preview-error.log
 .env

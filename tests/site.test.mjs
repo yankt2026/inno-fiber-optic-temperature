@@ -50,3 +50,9 @@ test('builds /sitemap.xml and advertises it in robots.txt', () => {
   assert.match(readFileSync(join(root,'scripts/create-sitemap-alias.mjs'),'utf8'),/^import /);
   assert.match(robots,/Sitemap: https:\/\/baike84\.com\/sitemap\.xml/);
 });
+
+test('quote-only product pages use ItemPage schema without unsupported Product rich-result markup', () => {
+  const source=readFileSync(join(root,'src/pages/products/[slug].astro'),'utf8');
+  assert.match(source,/'@type':'ItemPage'/);
+  assert.doesNotMatch(source,/'@type':'Product'/);
+});
