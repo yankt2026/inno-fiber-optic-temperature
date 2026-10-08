@@ -19,6 +19,8 @@ Initialize Git with `git init`, review files, create the first commit, create an
 
 ## Cloudflare Pages
 
+Verified on 2026-10-08: the existing Pages project `inno-fiber-optic-temperature` serves `baike84.com` and `www.baike84.com`. It is now connected to `yankt2026/inno-fiber-optic-temperature` with production deployments enabled for `main`. The GitHub repository was public when checked. Local source directory: `E:\AI\baike84.com` (formerly `E:\AI\fos`).
+
 Connect the GitHub repository in Cloudflare Pages and use:
 
 - Framework preset: Astro

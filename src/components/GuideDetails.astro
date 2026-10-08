@@ -1,0 +1,16 @@
+---
+import type { Guide } from '../data/pages';
+interface Props { page: Guide }
+const { page } = Astro.props;
+---
+{page.table && <section>
+  <h2>{page.table.heading}</h2>
+  <table class="spec">
+    <thead><tr>{page.table.columns.map(column => <th scope="col">{column}</th>)}</tr></thead>
+    <tbody>{page.table.rows.map(row => <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody>
+  </table>
+</section>}
+{page.relatedLinks && <section>
+  <h2>Related products and engineering guides</h2>
+  <ul>{page.relatedLinks.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+</section>}
