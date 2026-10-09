@@ -27,8 +27,8 @@ test('built pages contain only the approved contact email',()=>{
   const emails=new Set(htmlFiles.flatMap(f=>[...readFileSync(f,'utf8').matchAll(/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g)].map(m=>m[0])));assert.deepEqual([...emails],['fjinnonet@gmail.com']);
 });
 
-test('production URLs use baike84.com without the placeholder domain',()=>{
+test('production URLs use rootsir.com without the placeholder domain',()=>{
   const output=files.filter(f=>/\.(html|xml|txt)$/.test(f)).map(f=>readFileSync(f,'utf8')).join('\n');
-  assert.ok(output.includes('https://baike84.com'));
+  assert.ok(output.includes('https://rootsir.com'));
   assert.ok(!output.includes('example.com'));
 });

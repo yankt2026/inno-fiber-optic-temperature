@@ -19,7 +19,7 @@ Initialize Git with `git init`, review files, create the first commit, create an
 
 ## Cloudflare Pages
 
-Verified on 2026-10-08: the existing Pages project `inno-fiber-optic-temperature` serves `baike84.com` and `www.baike84.com`. It is now connected to `yankt2026/inno-fiber-optic-temperature` with production deployments enabled for `main`. The GitHub repository was public when checked. Local source directory: `E:\AI\baike84.com` (formerly `E:\AI\fos`).
+Updated on 2026-10-09: the existing Pages project `inno-fiber-optic-temperature` is configured for `rootsir.com` and `www.rootsir.com`, replacing `baike84.com`. It is connected to `yankt2026/inno-fiber-optic-temperature` with production deployments enabled for `main`. The GitHub repository was public when checked on 2026-10-08. Local source directory: `E:\AI\rootsir.com` (formerly `E:\AI\baike84.com`, originally `E:\AI\fos`).
 
 Connect the GitHub repository in Cloudflare Pages and use:
 
@@ -32,7 +32,7 @@ Bind the custom domain after the first deployment. Cloudflare provisions HTTPS a
 
 ## Production URL
 
-The production URL is `https://baike84.com`. It is configured in `src/config/site.ts`, `astro.config.mjs`, and `public/robots.txt`, so canonical URLs, structured data and the XML sitemap use the live domain.
+The production URL is `https://rootsir.com`. It is configured in `src/config/site.ts`, `astro.config.mjs`, and `public/robots.txt`, so canonical URLs, structured data and the XML sitemap use the live domain.
 
 ## Images
 

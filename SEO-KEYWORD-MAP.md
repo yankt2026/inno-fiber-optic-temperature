@@ -1,6 +1,6 @@
 # SEO Keyword-to-Page Map
 
-No CSV or XLSX files were present during the 2026-07-12 inventory. This map uses the approved keyword set supplied in the project brief. The production domain is `https://baike84.com`.
+No CSV or XLSX files were present during the 2026-07-12 inventory. This map uses the approved keyword set supplied in the project brief. The production domain is `https://rootsir.com`.
 
 | Page | Primary keyword | Secondary themes | Intent |
 |---|---|---|---|

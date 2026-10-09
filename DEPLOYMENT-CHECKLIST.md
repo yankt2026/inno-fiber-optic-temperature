@@ -1,6 +1,6 @@
 # Deployment Checklist
 
-- [x] Production domain set to `https://baike84.com` in site configuration, Astro configuration, and robots.txt.
+- [x] Production domain set to `https://rootsir.com` in site configuration, Astro configuration, and robots.txt.
 - [ ] Run `npm install`, `npm test`, `npm run check`, and `npm run build`.
 - [ ] Confirm `dist/sitemap-index.xml` and `dist/robots.txt` use the production domain.
 - [ ] Confirm every product specification against the selected model datasheet.

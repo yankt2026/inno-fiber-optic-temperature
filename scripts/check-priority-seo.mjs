@@ -15,8 +15,8 @@ for (const route of routes) {
   const html = readFileSync(resolve('dist', `.${route}`, 'index.html'), 'utf8');
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, route);
   assert.match(html, /<meta name="description" content="[^"]+"/);
-  assert.ok(html.includes(`<link rel="canonical" href="https://baike84.com${route}"`), route);
-  assert.ok(sitemap.includes(`<loc>https://baike84.com${route}</loc>`), route);
+  assert.ok(html.includes(`<link rel="canonical" href="https://rootsir.com${route}"`), route);
+  assert.ok(sitemap.includes(`<loc>https://rootsir.com${route}</loc>`), route);
   assert.doesNotMatch(html, /<meta[^>]+(?:name="robots"[^>]+content="[^"]*noindex|content="[^"]*noindex[^>]+name="robots")/i);
   for (const [, json] of html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) JSON.parse(json);
   const body = [...html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>\s*<p>([\s\S]*?)<\/p>/g)].map(match => match[2]).join('\n');
@@ -33,6 +33,6 @@ for (const route of routes) {
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 assert.equal(urls.length, 48);
 assert.equal(new Set(urls).size, 48);
-assert.ok(urls.every(url => url.startsWith('https://baike84.com/') && !url.includes('/404')));
-assert.ok(readFileSync(resolve('dist/robots.txt'), 'utf8').includes('Sitemap: https://baike84.com/sitemap.xml'));
+assert.ok(urls.every(url => url.startsWith('https://rootsir.com/') && !url.includes('/404')));
+assert.ok(readFileSync(resolve('dist/robots.txt'), 'utf8').includes('Sitemap: https://rootsir.com/sitemap.xml'));
 console.log('PASS sitemap: 48 unique canonical URLs; robots advertises the generated sitemap');
